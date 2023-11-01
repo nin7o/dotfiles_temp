@@ -1,0 +1,153 @@
+@import '/home/nin7o/.config/waybar/colors.css';
+
+* {
+  border: none;
+  border-radius: 0;
+  min-height: 0;
+  font-family: Material Design Icons, JetBrainsMono Nerd Font;
+  font-size: 13px;
+}
+
+window#waybar {
+  background-color: @background-color;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+}
+
+window#waybar.hidden {
+  opacity: 0.5;
+}
+
+#workspaces {
+  background-color: transparent;
+}
+
+#workspaces button {
+  all: initial; /* Remove GTK theme values (waybar #1351) */
+  min-width: 0; /* Fix weird spacing in materia (waybar #450) */
+  box-shadow: inset 0 -3px transparent; /* Use box-shadow instead of border so the text isn't offset */
+  padding: 6px 18px;
+  margin: 6px 3px;
+  border-radius: 4px;
+  background-color: @background-color;
+  color: @workspace-button-color;
+}
+
+#workspaces button.active {
+  color: @background-color;
+  background-color: @workspace-button-color;
+}
+
+#workspaces button:hover {
+ box-shadow: inherit;
+ text-shadow: inherit;
+ color: #1e1e2e;
+ background-color: @workspace-button-color;
+}
+
+#workspaces button.urgent {
+  background-color: @workspace-button-urgent-color;
+}
+
+#memory,
+#custom-power,
+#battery,
+#backlight,
+#pulseaudio,
+#network,
+#clock,
+#tray {
+  border-radius: 4px;
+  margin: 6px 3px;
+  padding: 6px 12px;
+  background-color: @background-color;
+  color: @tray-color;
+}
+
+#custom-power {
+  margin-right: 6px;
+}
+
+#custom-logo {
+  padding-right: 7px;
+  padding-left: 7px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  margin-left: 5px;
+  margin-top: 5px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  font-size: 15px;
+  border-radius: 8px 0px 0px 8px;
+  color: @logo-color;
+  background-image: url("/home/nin7o/Pictures/net7_white.png");
+  background-size: contain; /* Réduire la taille à 50% de la largeur et 50% de la hauteur */
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#memory {
+  background-color: @memory-color;
+}
+#battery {
+  background-color: @battery-color;
+}
+@keyframes blink {
+  to {
+    background-color: @battery-color;
+    color: @tray-color;
+  }
+}
+
+#battery.warning,
+#battery.critical,
+#battery.urgent {
+  background-color: @battery-urgent;
+  color: @tray-color;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+#battery.charging {
+  background-color: @battery-charging;
+}
+
+#backlight {
+  background-color: @backlight;
+}
+
+#pulseaudio {
+  background-color: @audio;
+}
+
+#network {
+  background-color: @network;
+  padding-right: 17px;
+}
+
+#clock {
+  font-family: JetBrainsMono Nerd Font;
+  background-color: @clock;
+}
+
+#custom-power {
+  background-color: @power;
+}
+
+
+tooltip {
+border-radius: 8px;
+padding: 15px;
+background-color: @background-color;
+}
+
+tooltip label {
+padding: 5px;
+background-color: @background-color;
+}
+
+#custom-cava {
+  padding: 1rem;
+}
