@@ -9,7 +9,7 @@
 }
 
 window#waybar {
-  background-color: @background-color;
+  background-color: transparent;
   transition-property: background-color;
   transition-duration: 0.5s;
 }
@@ -150,4 +150,5 @@ background-color: @background-color;
 
 #custom-cava {
   padding: 1rem;
+  color: @lavender;
 }
